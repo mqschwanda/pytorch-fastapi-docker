@@ -1,0 +1,12 @@
+services:
+  app:
+    container_name: app
+    build:
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./app:/app:ro
+    command: uvicorn main:app --host 0.0.0.0 --port 80
+    ports:
+      - 80:80
+volumes:
+  app:
